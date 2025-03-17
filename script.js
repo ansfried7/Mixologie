@@ -1,52 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Fonction pour vérifier que tous les champs sont remplis
-    const form = document.querySelector('form');  // Récupère le formulaire
-    const inputs = form.querySelectorAll('input, textarea'); // Récupère tous les champs du formulaire
-    const submitButton = form.querySelector('button'); // Récupère le bouton de soumission
-    
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+
     form.addEventListener('submit', function (e) {
-        e.preventDefault();  // Empêche l'envoi du formulaire avant la validation
+        e.preventDefault(); // Empêche l'envoi du formulaire par défaut
 
-        let allFieldsFilled = true;  // Variable pour vérifier si tous les champs sont remplis
-        let errorMessage = '';
+        // Récupérer les valeurs des champs
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-        // Vérifier chaque champ
-        inputs.forEach(input => {
-            if (input.required && !input.value.trim()) {  // Si le champ est obligatoire et vide
-                allFieldsFilled = false;
-                errorMessage += `${input.placeholder || input.name} est obligatoire.\n`;  // Ajoute un message d'erreur pour chaque champ vide
-            }
-        });
-
-        // Si tous les champs sont remplis, on peut envoyer le formulaire
-        if (allFieldsFilled) {
-            form.submit();  // Si tout est validé, soumettre le formulaire
-            alert("Votre message a bien été envoyé !");
+        // Vérification que tous les champs sont remplis
+        if (name && email && message) {
+            alert('Demande envoyée avec succès !');
+            form.reset(); // Réinitialise le formulaire après soumission
         } else {
-            // Sinon, afficher un message d'erreur
-            alert(errorMessage || 'Tous les champs sont obligatoires.');
+            alert('Veuillez remplir tous les champs du formulaire.');
         }
     });
-
-    // Pour les animations au survol des images de la galerie (Zoom effect)
-    const galleryImages = document.querySelectorAll(".creations .gallery img");
-    galleryImages.forEach(img => {
-        img.addEventListener("mouseover", function () {
-            img.style.transform = "scale(1.05)";
-        });
-        img.addEventListener("mouseout", function () {
-            img.style.transform = "scale(1)";
-        });
-    });
-
-    // Animation au clic sur le bouton de contact
-    const contactButton = document.querySelector("form button");
-    if (contactButton) {
-        contactButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            alert("Merci de nous avoir contacté !");
-            contactButton.style.backgroundColor = "#d35400";
-            contactButton.style.transform = "scale(1.1)";
-        });
-    }
 });
+
+ // Fonction pour détecter la visibilité des éléments dans la fenêtre
+window.addEventListener('scroll', function() {
+    var items = document.querySelectorAll('.portfolio-item');
+    var windowHeight = window.innerHeight;
+    
+    items.forEach(function(item) {
+        var itemPosition = item.getBoundingClientRect().top;
+        
+        // Si l'élément est visible dans la fenêtre
+        if (itemPosition < windowHeight * 0.8) { // L'élément devient visible quand il est à 80% de la hauteur de la fenêtre
+            item.classList.add('visible');
+        }
+    });
+});
+

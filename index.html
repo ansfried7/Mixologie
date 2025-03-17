@@ -8,8 +8,25 @@
 </head>
 <body>
     <!-- Section Bannière -->
+      <!-- En-tête -->
+    <header class="header">
+        <div class="logo">
+            <!-- Remplacer par une image du logo -->
+            <a href="#hero"><img src="imageM/logo baratie[1].jpg" alt="Lebaratie"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <header class="hero">
-        <div class="hero-content">
+        <div class="hero-content" id="hero">
             <h1>L'art du Cocktail, à votre service</h1>
             <p>Découvrez l'univers créatif de la mixologie pour vos événements.</p>
             <a href="#services" class="cta-btn">Réservez votre événement</a>
@@ -18,47 +35,68 @@
 
     <!-- Section Qui suis-je -->
     <section id="about" class="about">
-        <h2>Qui suis-je ?</h2>
-        <p>Je suis un mixologiste passionné, spécialisé dans la création de cocktails uniques pour chaque occasion. Mon objectif est d'ajouter une touche de magie à vos événements.</p>
-        <a href="#contact" class="cta-btn">En savoir plus</a>
+        <div class="about-text">
+            <h2>À propos de moi</h2>
+            <p>Je suis un mixologue passionné avec plusieurs années d'expérience, créant des cocktails uniques pour chaque occasion.</p>
+        </div>
+        <div class="about-image">
+            <img src="imageM/WhatsApp Image 2025-03-17 à 02.16.17_a8c5536b.jpg" alt="Dollar QUENUM">
+        </div>
     </section>
 
     <!-- Section Mes Créations -->
-    <section id="creations" class="creations">
-        <h2>Mes créations</h2>
-        <div class="gallery">
-            <img src="file:///C:/Users/HP/OneDrive/Documentos/cocktail1.jpg" alt="Cocktail signature 1">
-            <img src="file:///C:/Users/HP/OneDrive/Documentos/cocktail2.jpg" alt="Cocktail signature 2">
-            <img src="file:///C:/Users/HP/OneDrive/Documentos/cocktail3.jpg" alt="Cocktail signature 3">
-        </div>
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+    <div class="portfolio-item">
+        <img src="imageM/IMG-20250316-WA0043.jpg" alt="Cocktail Signature 1">
+    </div>
+    <div class="portfolio-item">
+        <img src="imageM/IMG-20250316-WA0045.jpg" alt="Cocktail Signature 2">
+    </div>
+    <div class="portfolio-item">
+        <img src="imageM/WhatsApp Image 2025-03-17 à 02.16.51_0984e17e.jpg" alt="Cocktail Signature 3">
+    </div>
         <a href="#contact" class="cta-btn">Voir plus de créations</a>
     </section>
 
     <!-- Section Services -->
     <section id="services" class="services">
-        <h2>Services proposés</h2>
-        <ul>
-            <li>Bar mobil à cocktails pour événements</li>
-            <li>Ateliers de mixologie</li>
-            <li>Création de cocktails sur-mesure</li>
-        </ul>
-        <a href="#contact" class="cta-btn">Réservez maintenant</a>
+        <h2>Services</h2>
+        <div class="service-item">
+            <h3>Cocktails sur mesure</h3>
+            <p>Créez des cocktails personnalisés pour vos événements.</p>
+        </div>
+        <div class="service-item">
+            <h3>Ateliers de Mixologie</h3>
+            <p>Apprenez l'art de la mixologie avec des ateliers pratiques.</p>
+        </div>
+        <div class="service-item">
+            <h3>Événements privés</h3>
+            <p>Organisez des événements privés avec un bar à cocktails exclusif.</p>
+        </div>
+        
     </section>
 
     <!-- Section Contact -->
     <section id="contact" class="contact">
         <h2>Contactez-moi</h2>
-        <p>Prêt à organiser un événement inoubliable ? Contactez-moi pour réserver ou poser vos questions.</p>
-        <form action="#" method="POST">
-            <input type="text" placeholder="Nom" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
+        <form id="contactForm">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Envoyer la demande</button>
         </form>
     </section>
 
+
     <footer>
-        <p>&copy; 2025 Mixologie Créative | Tous droits réservés</p>
+        <p>&copy; 2025 LeBaratie | Tous droits réservés</p>
     </footer>
 
     <script src="script.js"></script>
